@@ -13,13 +13,4 @@ import java.io.File;
  */
 public class Tester extends Employee {
 
-    @Override
-    public void saveInFile(File file) {
-
-    }
-
-    @Override
-    public User readFromFile(File file) {
-        return null;
-    }
 }

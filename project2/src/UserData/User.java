@@ -16,7 +16,7 @@ import java.util.Objects;
 public class User {
 
     protected enum TYPE {
-        MANAGER, EMPLOYEE, CEO
+        MANAGER, DEVELOPER, TESTER, CEO
     }
 
     protected String userName;
@@ -52,6 +52,13 @@ public class User {
         return false;
     }
 
+    public void saveInFile(File file) {
+
+    }
+
+    public User readFromFile(File file) {
+        return null;
+    }
 
 
 }
