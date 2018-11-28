@@ -56,9 +56,4 @@ public class User {
 
     }
 
-    public User readFromFile(File file) {
-        return null;
-    }
-
-
 }

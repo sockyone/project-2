@@ -9,4 +9,8 @@ public class ProjectManager {
     public ProjectManager() {
         this.userList = new ArrayList<>();
     }
+
+    public void loadUser() {
+
+    }
 }
