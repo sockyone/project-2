@@ -15,7 +15,7 @@ public class Tester extends Employee {
         super(employeeID, Username, Password, Realname, false);
     }
     
-   private ChangeTask() {
+   private void ChangeTask() {
        
    } 
 }
