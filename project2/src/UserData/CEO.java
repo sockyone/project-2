@@ -18,6 +18,11 @@ public class CEO extends User {
         this.type = TYPE.CEO;
     }
 
+    public CEO(String userName, String password, String fullName) {
+        super(userName, password, fullName);
+        this.type = TYPE.CEO;
+    }
+
     public void createUser() {
 
     }

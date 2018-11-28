@@ -19,6 +19,11 @@ public class Manager extends User {
         this.type = TYPE.MANAGER;
     }
 
+    public Manager(String userName, String password, String fullName) {
+        super(userName, password, fullName);
+        this.type = TYPE.MANAGER;
+    }
+
     public void createTask() {
 
     }

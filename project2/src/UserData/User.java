@@ -28,6 +28,12 @@ public class User {
 
     }
 
+    public User(String userName, String password, String fullName) {
+        this.userName = userName;
+        this.password = password;
+        this.fullName = fullName;
+    }
+
     public void setPassword(String password) {
         this.password = this.MD5(password);
     }
