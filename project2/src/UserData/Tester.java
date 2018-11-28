@@ -5,17 +5,21 @@
  */
 package UserData;
 
+import java.io.File;
+
 /**
  *
  * @author nghun
  */
 public class Tester extends Employee {
-    
-    public Tester(int employeeID, String Username, String Password, String Realname, boolean CEOrole) {
-        super(employeeID, Username, Password, Realname, false);
+
+    @Override
+    public void saveInFile(File file) {
+
     }
-    
-   private void ChangeTask() {
-       
-   } 
+
+    @Override
+    public User readFromFile(File file) {
+        return null;
+    }
 }

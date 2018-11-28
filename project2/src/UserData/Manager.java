@@ -5,30 +5,22 @@
  */
 package UserData;
 
+import java.io.File;
+
 /**
  *
  * @author nghun
  */
 public class Manager extends User {
-    
-    public int managerID;
 
-    public Manager(int managerID, String Username, String Password, String Realname,boolean CEOrole) {
-        super(Username, Password, Realname,false);
-        this.managerID = managerID;
-    }
 
-    public int getManagerID() {
-        return managerID;
+    public Manager() {
+        super();
+        this.type = TYPE.MANAGER;
     }
 
-    public void setManagerID(int managerID) {
-        this.managerID = managerID;
+    public void createTask() {
+
     }
-    private Project addEmp(Project pj,Employee emp)
-    {
-        pj.AddiEmpl(emp);
-        return pj;
-    }
-     
+
 }
