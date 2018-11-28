@@ -38,6 +38,21 @@ public class User {
         this.password = this.MD5(password);
     }
 
+    public String getPassword() {
+        return this.password;
+    }
+    public String getUsername() {
+        return this.username;
+    }
+    public String getFullname() {
+        return this.fullname;
+    } 
+
+    public Type getType() {
+	return this.type;
+    }
+
+
     private String MD5(String md5) {
         try {
             java.security.MessageDigest md = java.security.MessageDigest.getInstance("MD5");
@@ -58,7 +73,22 @@ public class User {
         return false;
     }
 
-    public void saveInFile(File file) {
+    public void saveInFile(String patch) {
+	FileOutputStream fout = new FileOutputStream(patch);
+        PrintStream pout = new PrintStream(fout);
+	if (this.getType = Type.CEO) pout.println("CEO");
+	if (this.getType = Type.CEO) pout.println("Manager");
+	if (this.getType = Type.CEO) pout.println("Developer");
+	if (this.getType = Type.CEO) pout.println("Tester");
+
+        pout.println(this.getUserName);
+	pout.println(this.getPassword);
+	pout.println(this.getFullname);
+        pout.close();
+        fout.close();
+    }
+}
+
 
     }
 
