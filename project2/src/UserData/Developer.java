@@ -14,6 +14,8 @@ import java.io.File;
 public class Developer extends User {
 
     public Developer() {
+        super();
+        this.type = TYPE.DEVELOPER;
     }
 
     public Developer(String id, String userName, String password, String fullName) {

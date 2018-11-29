@@ -14,6 +14,9 @@ import java.io.File;
 public class Tester extends User {
 
     public Tester() {
+        super();
+        this.type = TYPE.TESTER;    
+        
     }
 
     public Tester(String id, String userName, String password, String fullName) {
