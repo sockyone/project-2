@@ -34,25 +34,28 @@ public class ProjectManager {
             String line = bfr.readLine();
             while(line != null){
                 String []array = line.split(",");
-                if(array.length == 4 && array[0] == "CEO")
+                if(array.length == 4)
                 {
-                CEO ceo = new CEO(array[1],array[2],array[3]);
-                this.userList.add(ceo);
-                }
-                if(array.length == 4 && array[0] == "Manager")
-                {
-                Manager mn = new Manager(array[1],array[2],array[3]);
-                this.userList.add(mn);
-                }
-                if(array.length == 4 && array[0] == "Developer")
-                {
-                Developer dev = new Developer(array[1],array[2],array[3]);
-                this.userList.add(dev);
-                }
-                if(array.length == 4 && array[0] == "Tester")
-                {
-                Tester tst = new Tester(array[1],array[2],array[3]);
-                this.userList.add(tst);
+                    if (array[0].equals("CEO")) 
+                    {
+                        CEO ceo = new CEO(array[1],array[2],array[3]);
+                        this.userList.add(ceo);
+                    }
+                    if (array[0].equals("Developer")) 
+                    {
+                        Developer dev = new Developer(array[1],array[2],array[3]);
+                        this.userList.add(dev);
+                    }
+                    if (array[0].equals("Manager")) 
+                    {
+                        Manager mn = new Manager(array[1],array[2],array[3]);
+                        this.userList.add(mn);
+                    }
+                    if (array[0].equals("Tester")) 
+                    {
+                        Tester tst = new Tester(array[1],array[2],array[3]);
+                        this.userList.add(tst);
+                    }
                 }
                 line = bfr.readLine();
             }
