@@ -11,6 +11,15 @@ import java.io.File;
  *
  * @author nghun
  */
-public class Developer extends Employee {
+public class Developer extends User {
+
+    public Developer() {
+    }
+
+    public Developer(String userName, String password, String fullName) {
+        super(userName, password, fullName);
+    }
+
+      
 
 }

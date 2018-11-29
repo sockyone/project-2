@@ -11,6 +11,15 @@ import java.io.File;
  *
  * @author nghun
  */
-public class Tester extends Employee {
+public class Tester extends User {
+
+    public Tester() {
+    }
+
+    public Tester(String userName, String password, String fullName) {
+        super(userName, password, fullName);
+    }
+
+    
 
 }

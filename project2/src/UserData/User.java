@@ -7,6 +7,14 @@ package UserData;
 
 import java.io.File;
 import java.util.Objects;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.StringWriter;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+
 
 /**
  *
@@ -42,13 +50,13 @@ public class User {
         return this.password;
     }
     public String getUsername() {
-        return this.username;
+        return this.userName;
     }
     public String getFullname() {
-        return this.fullname;
+        return this.fullName;
     } 
 
-    public Type getType() {
+    public TYPE getType() {
 	return this.type;
     }
 
@@ -73,23 +81,20 @@ public class User {
         return false;
     }
 
-    public void saveInFile(String patch) {
-	FileOutputStream fout = new FileOutputStream(patch);
-        PrintStream pout = new PrintStream(fout);
-	if (this.getType = Type.CEO) pout.println("CEO");
-	if (this.getType = Type.CEO) pout.println("Manager");
-	if (this.getType = Type.CEO) pout.println("Developer");
-	if (this.getType = Type.CEO) pout.println("Tester");
-
-        pout.println(this.getUserName);
-	pout.println(this.getPassword);
-	pout.println(this.getFullname);
-        pout.close();
-        fout.close();
-    }
-}
-
-
+    public void saveInFile(String patch)   throws IOException {
+        FileWriter writer = new FileWriter(patch);
+        BufferedWriter buffer = new BufferedWriter(writer);
+        if(this.getType() == TYPE.CEO ) buffer.write("CEO,");
+        if(this.getType() == TYPE.DEVELOPER ) buffer.write("Develper,");
+        if(this.getType() == TYPE.MANAGER ) buffer.write("Manager,");
+        if(this.getType() == TYPE.TESTER ) buffer.write("Tester,");
+        buffer.write(this.getUsername());
+        buffer.write(",");
+        buffer.write(this.getPassword());
+        buffer.write(",");
+        buffer.write(this.getFullname());
+        buffer.newLine();
+        buffer.close();
     }
 
 }
