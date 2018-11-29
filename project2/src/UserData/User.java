@@ -6,6 +6,7 @@
 package UserData;
 
 import java.io.File;
+import java.util.Date;
 import java.util.Objects;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -14,6 +15,7 @@ import java.io.InputStreamReader;
 import java.io.StringWriter;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
+import java.util.UUID;
 
 
 /**
@@ -23,14 +25,15 @@ import java.io.FileWriter;
 
 public class User {
 
-    protected enum TYPE {
+    public enum TYPE {
         MANAGER, DEVELOPER, TESTER, CEO
     }
 
     protected String userName;
     protected String password;
     protected String fullName;
-    protected TYPE type;
+    protected String id;
+    public TYPE type;
 
     public User() {
 
@@ -40,6 +43,15 @@ public class User {
         this.userName = userName;
         this.password = password;
         this.fullName = fullName;
+
+        this.id= UUID.randomUUID().toString();
+    }
+
+    public User(String id, String userName, String password, String fullName) {
+        this.userName = userName;
+        this.password = password;
+        this.fullName = fullName;
+        this.id = id;
     }
 
     public void setPassword(String password) {
@@ -55,10 +67,6 @@ public class User {
     public String getFullname() {
         return this.fullName;
     } 
-
-    public TYPE getType() {
-	return this.type;
-    }
 
 
     private String MD5(String md5) {
@@ -81,13 +89,11 @@ public class User {
         return false;
     }
 
-    public void saveInFile(String patch)   throws IOException {
-        FileWriter writer = new FileWriter(patch);
-        BufferedWriter buffer = new BufferedWriter(writer);
-        if(this.getType() == TYPE.CEO ) buffer.write("CEO,");
-        if(this.getType() == TYPE.DEVELOPER ) buffer.write("Develper,");
-        if(this.getType() == TYPE.MANAGER ) buffer.write("Manager,");
-        if(this.getType() == TYPE.TESTER ) buffer.write("Tester,");
+    public void saveInFile(BufferedWriter buffer)   throws IOException {
+        if(this.type == TYPE.CEO ) buffer.write("CEO,");
+        if(this.type == TYPE.DEVELOPER ) buffer.write("Develper,");
+        if(this.type == TYPE.MANAGER ) buffer.write("Manager,");
+        if(this.type == TYPE.TESTER ) buffer.write("Tester,");
         buffer.write(this.getUsername());
         buffer.write(",");
         buffer.write(this.getPassword());
