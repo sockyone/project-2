@@ -16,10 +16,12 @@ public class Developer extends User {
     public Developer() {
     }
 
-    public Developer(String userName, String password, String fullName) {
-        super(userName, password, fullName);
+    public Developer(String id, String userName, String password, String fullName) {
+        super(id, userName, password, fullName);
     }
 
+    
+    
       
 
 }

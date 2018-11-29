@@ -16,9 +16,11 @@ public class Tester extends User {
     public Tester() {
     }
 
-    public Tester(String userName, String password, String fullName) {
-        super(userName, password, fullName);
+    public Tester(String id, String userName, String password, String fullName) {
+        super(id, userName, password, fullName);
     }
+
+    
 
     
 

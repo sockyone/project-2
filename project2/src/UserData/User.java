@@ -32,6 +32,10 @@ public class User {
     protected String userName;
     protected String password;
     protected String fullName;
+
+    public String getId() {
+        return id;
+    }
     protected String id;
     public TYPE type;
 
@@ -58,15 +62,23 @@ public class User {
         this.password = this.MD5(password);
     }
 
+    public String getUserName() {
+        return userName;
+    }
+
     public String getPassword() {
-        return this.password;
+        return password;
     }
-    public String getUsername() {
-        return this.userName;
+
+    public String getFullName() {
+        return fullName;
     }
-    public String getFullname() {
-        return this.fullName;
-    } 
+
+    public TYPE getType() {
+        return type;
+    }
+
+    
 
 
     private String MD5(String md5) {
@@ -94,11 +106,13 @@ public class User {
         if(this.type == TYPE.DEVELOPER ) buffer.write("Develper,");
         if(this.type == TYPE.MANAGER ) buffer.write("Manager,");
         if(this.type == TYPE.TESTER ) buffer.write("Tester,");
-        buffer.write(this.getUsername());
+        buffer.write(this.getUserName());
         buffer.write(",");
         buffer.write(this.getPassword());
         buffer.write(",");
-        buffer.write(this.getFullname());
+        buffer.write(this.getFullName());
+        buffer.write(",");
+        buffer.write(this.getId());
         buffer.newLine();
         buffer.close();
     }
