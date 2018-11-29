@@ -23,13 +23,18 @@ public class ProjectManager {
     public ProjectManager() {
         this.userList = new ArrayList<>();
     }
+    
 
 
 
     public void saveUser() throws IOException {
         FileWriter writer = new FileWriter(this.userFile);
         BufferedWriter buffer = new BufferedWriter(writer);
-
+        for(int i= 0;i<this.userList.size();i++)
+        {
+            this.userList.get(i).saveInFile(buffer);
+        }
+        buffer.close();
     }
 
     
