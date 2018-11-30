@@ -38,8 +38,6 @@ public class Task {
     public void setStatus(STATUS status) {
         this.status = status;
     }
-
-    
     
     
     public String getPrjID() {
@@ -62,7 +60,7 @@ public class Task {
         return endDate;
     }
     
-    public void saveinFile (BufferedWriter buffer)   throws IOException {
+    public void saveInFile (BufferedWriter buffer)   throws IOException {
         buffer.write(this.getPrjID());
         buffer.newLine();
         buffer.write(this.createdDate.toString());
