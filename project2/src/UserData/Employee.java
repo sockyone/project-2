@@ -13,4 +13,12 @@ import java.io.File;
  */
 public class Employee extends User {
 
+    public Employee() {
+    }
+
+    public Employee(String id, String userName, String password, String fullName) {
+        super(id, userName, password, fullName);
+    }
+
+    
 }

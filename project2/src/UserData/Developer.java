@@ -14,16 +14,17 @@ import java.io.File;
 public class Developer extends User {
 
     public Developer() {
-        super();
+    }
+
+    public Developer(String id, String userName, String password, String fullName) 
+    {
+        
+        super(id, userName, password, fullName);
         this.type = TYPE.DEVELOPER;
     }
 
-    public Developer(String id, String userName, String password, String fullName) {
-        super(id, userName, password, fullName);
-    }
+   
 
-    
-    
       
 
 }

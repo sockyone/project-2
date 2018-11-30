@@ -74,6 +74,10 @@ public class User {
         return fullName;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public TYPE getType() {
         return type;
     }

@@ -5,8 +5,11 @@
  */
 package UserData;
 
+import java.io.BufferedWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import UserData.Task;
 
 /**
  *
@@ -14,17 +17,21 @@ import java.util.List;
  */
 public class Project {
     public String name;
-    public int manageID;
-    public List<Employee> list ;
-    public int prjID;
-    public List<Task> task1;
+    public Manager mn;
+    public ArrayList<User> list ;
+    public String prjID;
+    public ArrayList<Task> task1;
     public int numberEmpl;
-    
-    public Project(String name, int manageID, int prjID) {
+
+    public Project(String name, Manager mn, ArrayList<User> list, String prjID, ArrayList<Task> task1) {
         this.name = name;
-        this.manageID = manageID;
+        this.mn = mn;
+        this.list = list;
         this.prjID = prjID;
+        this.task1 = task1;
     }
+    
+   
 
     public String getName() {
         return name;
@@ -34,35 +41,35 @@ public class Project {
         this.name = name;
     }
 
-    public int getManageID() {
-        return manageID;
+    public String getManageID() {
+        return mn.getId();
     }
 
-    public void setManageID(int manageID) {
-        this.manageID = manageID;
+    public void setManageID(Manager mnn) {
+        this.mn.setId(mnn.getId());
     }
 
-    public List<Employee> getList() {
+    public ArrayList<User> getList() {
         return list;
     }
 
-    public void setList(List<Employee> list) {
+    public void setList(ArrayList<User> list) {
         this.list = list;
     }
 
-    public int getPrjID() {
+    public String getPrjID() {
         return prjID;
     }
 
-    public void setPrjID(int prjID) {
+    public void setPrjID(String prjID) {
         this.prjID = prjID;
     }
 
-    public List<Task> getTask1() {
+    public ArrayList<Task> getTask1() {
         return task1;
     }
 
-    public void setTask1(List<Task> task1) {
+    public void setTask1(ArrayList<Task> task1) {
         this.task1 = task1;
     }
 
@@ -78,6 +85,30 @@ public class Project {
     {
         numberEmpl++;
         list.add(emp1);
+    }
+    
+    public void saveinFile(BufferedWriter buffer)   throws IOException {
+        buffer.write(this.getPrjID());
+        buffer.newLine();
+        buffer.write(this.getName());
+        buffer.newLine();
+        buffer.write(this.getManageID());
+        buffer.newLine();
+        buffer.write("Task: ");
+        buffer.newLine();
+        for(int i = 0 ; i< this.task1.size();i++)
+        {
+            this.task1.get(i).saveinFile(buffer);
+            buffer.newLine();
+        }
+        buffer.newLine();
+        buffer.write("Employees ");
+        buffer.newLine();
+        for(int i = 0 ; i< this.list.size();i++)
+        {
+            this.list.get(i).saveInFile(buffer);
+        }
+        buffer.newLine();
     }
     
 }

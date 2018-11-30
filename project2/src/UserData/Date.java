@@ -10,40 +10,41 @@ package UserData;
  * @author nghun
  */
 public class Date {
-    int day;
-    int month;
-    int year;
+    String day;
+    String month;
+    String year;
 
-    public Date(int day, int month, int year) {
+    public Date(String day, String month, String year) {
         this.day = day;
         this.month = month;
         this.year = year;
     }
 
-    public int getDay() {
+    public String getDay() {
         return day;
     }
 
-    public void setDay(int day) {
+    public void setDay(String day) {
         this.day = day;
     }
 
-    public int getMonth() {
+    public String getMonth() {
         return month;
     }
 
-    public void setMonth(int month) {
+    public void setMonth(String month) {
         this.month = month;
     }
 
-    public int getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(int year) {
+    public void setYear(String year) {
         this.year = year;
     }
 
+    
     @Override
     public int hashCode() {
         int hash = 5;
@@ -76,7 +77,7 @@ public class Date {
 
     @Override
     public String toString() {
-        return "Date{" + "day=" + day + ", month=" + month + ", year=" + year + '}';
+        return ""+ day + "/" + month + "/" + year;
     }
     
 }
