@@ -1,5 +1,6 @@
 import UserData.*;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.io.File;
 import java.util.Objects;
@@ -10,18 +11,162 @@ import java.io.InputStreamReader;
 import java.io.StringWriter;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
+import java.util.Scanner;
 
 public class ProjectManager {
     private ArrayList<User> userList;
     private String userFile="user.txt";
     private final String projectFile="project.txt";
     private final String taskFile = "task.txt";
-    public ArrayList<Project> listProject;
-    public ArrayList<Task> listTask;
+    private ArrayList<Project> listProject;
+    private ArrayList<Task> listTask;
+    private User user;
+    private Scanner scn;
 
 
     public ProjectManager() {
         this.userList = new ArrayList<>();
+        this.listProject = new ArrayList<>();
+        this.listTask = new ArrayList<>();
+        scn = new Scanner(System.in);
+    }
+
+    public void run() {
+        System.out.println("Loading...");
+        try {
+            loadUser();
+            loadProject();
+            loadTask();
+        } catch (IOException e) {
+            System.out.println("Can't load. Something wrong with your file.");
+            return;
+        }
+        System.out.println("Loading complete.");
+        if (!login()) return;
+
+        while (true) {
+            System.out.println("Choose: ");
+            System.out.println("1. Project list");
+            System.out.println("2. Task joined");
+            System.out.println("3. User list");
+            System.out.println("4. Employee list");
+            System.out.println("5. Close");
+
+            boolean isBreak = false;
+            int choose;
+            try {
+                choose = Integer.parseInt(scn.nextLine());
+            } catch (Exception e) {
+                continue;
+            }
+
+            if (choose > 5 || choose < 1) {
+                System.out.println("Invalid.");
+                continue;
+            }
+
+            switch (choose) {
+                case 1: projectListDisplay(); break;
+                case 2: taskJoinedDisplay(); break;
+                case 3: userListDisplay(); break;
+                case 4: employeeListDisplay(); break;
+                case 5:
+                    System.out.println("closing...");
+                    isBreak = true;
+                    break;
+            }
+            if (isBreak) break;
+        }
+
+    }
+    private boolean login() {
+
+
+        return true;
+    }
+
+    private void projectListDisplay() {
+        if (this.user.getType() == User.TYPE.CEO) showAllProjectAndTaskCount();
+        else showProjectAndTaskCountFromId();
+
+        while (true) {
+            System.out.println("1. Create new project (CEO only)");
+            System.out.println("2. Show task");
+            System.out.println("3. CSV project info");
+            System.out.println("4. Cancel");
+            boolean isBreak = false;
+            int choose;
+            try {
+                choose = Integer.parseInt(scn.nextLine());
+            } catch (Exception e) {
+                continue;
+            }
+
+            if (choose > 4 || choose < 1) {
+                System.out.println("Invalid.");
+                continue;
+            }
+
+            switch (choose) {
+                case 1: createNewProject(); break;
+                case 2: showTask(); break;
+                case 3: printProjectToCSV(); break;
+                case 4: isBreak = true; break;
+            }
+            if (isBreak) break;
+        }
+    }
+
+    private void showAllProjectAndTaskCount() {
+
+    }
+
+    private void showProjectAndTaskCountFromId() {
+
+    }
+
+    private void createNewProject() {
+
+    }
+
+    private void showTask() {
+
+    }
+
+    private void printProjectToCSV() {
+
+    }
+
+    private void taskJoinedDisplay() {
+        if (this.user.getType() == User.TYPE.CEO) {
+            System.out.println("You have no permision.");
+            return;
+        }
+
+
+
+    }
+
+    private void userListDisplay() {
+        if (this.user.getType() != User.TYPE.CEO) {
+            System.out.println("Only CEO have permission for this option.");
+            return;
+        }
+
+
+
+
+    }
+
+    private void employeeListDisplay() {
+        if (this.user.getType() != User.TYPE.MANAGER || this.user.getType() != User.TYPE.CEO) {
+            System.out.println("You have no permission");
+            System.out.println("Only Manager & CEO");
+            return;
+        }
+
+
+
     }
 
 
