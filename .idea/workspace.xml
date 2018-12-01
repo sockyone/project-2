@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2efae8eb-ea4d-4353-9f4a-98fff55df853" name="Default Changelist" comment="">
+    <list default="true" id="2efae8eb-ea4d-4353-9f4a-98fff55df853" name="Default Changelist" comment="fix loi">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project2/src/ProjectManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/project2/src/ProjectManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/src/UserData/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/project2/src/UserData/Project.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,13 +46,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="2288" />
+          <entry key="java" value="2405" />
           <entry key="txt" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2288" />
+          <entry key="JAVA" value="2405" />
           <entry key="PLAIN_TEXT" value="11" />
         </counts>
       </usages-collector>
@@ -82,8 +81,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/project2/src/ProjectManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="155" column="38" selection-start-line="155" selection-start-column="38" selection-end-line="155" selection-end-column="38" />
+            <state relative-caret-position="300">
+              <caret line="136" column="8" selection-start-line="136" selection-start-column="8" selection-end-line="136" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -185,8 +184,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="240" />
-    <option name="y" value="117" />
+    <option name="x" value="379" />
+    <option name="y" value="259" />
     <option name="width" value="1415" />
     <option name="height" value="893" />
   </component>
@@ -234,7 +233,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543678803356" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543679488329" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
@@ -413,14 +412,21 @@
       <option name="project" value="LOCAL" />
       <updated>1543674057922</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fix loi">
+      <created>1543678853763</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1543678853763</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5297000" />
+    <option name="totallyTimeSpent" value="5981000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="510" y="254" width="1415" height="893" extended-state="0" />
+    <frame x="747" y="408" width="1415" height="893" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.107749075" />
@@ -545,8 +551,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/project2/src/ProjectManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="155" column="38" selection-start-line="155" selection-start-column="38" selection-end-line="155" selection-end-column="38" />
+        <state relative-caret-position="300">
+          <caret line="136" column="8" selection-start-line="136" selection-start-column="8" selection-end-line="136" selection-end-column="8" />
         </state>
       </provider>
     </entry>

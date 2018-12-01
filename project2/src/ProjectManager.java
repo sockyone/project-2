@@ -109,7 +109,7 @@ public class ProjectManager {
 
             switch (choose) {
                 case 1: createNewProject(); break;
-                case 2: showTask(); break;
+                case 2: showTaskInProject(); break;
                 case 3: printProjectToCSV(); break;
                 case 4: isBreak = true; break;
             }
@@ -129,7 +129,9 @@ public class ProjectManager {
 
     }
 
-    private void showTask() {
+
+
+    private void showTaskInProject() {
 
     }
 
