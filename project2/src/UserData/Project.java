@@ -18,38 +18,43 @@ import UserData.Task;
 public class Project {
     public String name;
     public String prjID;
-    public int numberEmpl;
+    public String mnID;
+    public ArrayList<Task> task;
+    public ArrayList<User> user;
 
-    public Project(String name, Manager mn, ArrayList<User> list, String prjID, ArrayList<Task> task1) {
+    public Project(String name, String prjID, String mnID, ArrayList<Task> task, ArrayList<User> user) {
         this.name = name;
-
         this.prjID = prjID;
+        this.mnID = mnID;
+        this.task = task;
+        this.user = user;
     }
+
     
    
 
 
     
     public void saveinFile(BufferedWriter buffer)   throws IOException {
-        buffer.write(this.getPrjID());
+        buffer.write(this.prjID);
         buffer.newLine();
-        buffer.write(this.getName());
+        buffer.write(this.name);
         buffer.newLine();
-        buffer.write(this.getManageID());
+        buffer.write(this.mnID);
         buffer.newLine();
         buffer.write("Task: ");
         buffer.newLine();
-        for(int i = 0 ; i< this.task1.size();i++)
+        for(int i = 0 ; i< this.task.size();i++)
         {
-            this.task1.get(i).saveInFile(buffer);
+            this.task.get(i).saveInFile(buffer);
             buffer.newLine();
         }
         buffer.newLine();
         buffer.write("Employees ");
         buffer.newLine();
-        for(int i = 0 ; i< this.list.size();i++)
+        for(int i = 0 ; i< this.user.size();i++)
         {
-            this.list.get(i).saveInFile(buffer);
+            this.user.get(i).saveInFile(buffer);
         }
         buffer.newLine();
     }

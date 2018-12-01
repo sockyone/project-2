@@ -116,6 +116,9 @@ public class ProjectManager {
                     }
                 }
             }
+            Project ttp = new Project(pjName,prjID,mnID,task,emp);
+            this.listProject.add(ttp);
+            line = bfr.readLine();
         }
     }
 

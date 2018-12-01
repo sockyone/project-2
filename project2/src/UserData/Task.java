@@ -42,10 +42,10 @@ public class Task {
 
 
 
-    }
+    
     
     public void saveInFile (BufferedWriter buffer)   throws IOException {
-        buffer.write(this.getPrjID());
+        buffer.write(this.prjID);
         buffer.newLine();
         buffer.write(this.createdDate.toString());
         buffer.newLine();
