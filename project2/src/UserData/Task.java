@@ -22,11 +22,11 @@ public class Task {
     public String prjID;
     public ArrayList<Developer> developer;
     public ArrayList<Tester> tester;
-    public DATE createdDate;
-    public DATE endDate;
+    public Date createdDate;
+    public Date endDate;
     public STATUS status;
 
-    public Task(String prjID, ArrayList<Developer> developer, ArrayList<Tester> tester, DATE createdDate, DATE endDate, STATUS status) {
+    public Task(String prjID, ArrayList<Developer> developer, ArrayList<Tester> tester, Date createdDate, Date endDate, STATUS status) {
         this.prjID = prjID;
         this.developer = developer;
         this.tester = tester;
@@ -52,11 +52,11 @@ public class Task {
         return tester;
     }
 
-    public DATE getCreatedDate() {
+    public Date getCreatedDate() {
         return createdDate;
     }
 
-    public DATE getEndDate() {
+    public Date getEndDate() {
         return endDate;
     }
     
