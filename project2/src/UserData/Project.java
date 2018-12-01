@@ -23,9 +23,11 @@ public class Project {
     public ArrayList<Task> task1;
     public int numberEmpl;
 
-    public Project(String name, Manager mn, ArrayList<User> list, String prjID, ArrayList<Task> task1) {
+    
+
+    public Project(String name, String mnID, ArrayList<User> list, String prjID, ArrayList<Task> task1) {
         this.name = name;
-        this.mn = mn;
+        this.mn.id = mnID;
         this.list = list;
         this.prjID = prjID;
         this.task1 = task1;
