@@ -39,25 +39,9 @@ public class Task {
         this.status = status;
     }
     
-    
-    public String getPrjID() {
-        return prjID;
-    }
 
-    public List<Developer> getDeveloperID() {
-        return developer;
-    }
 
-    public List<Tester> getTesterID() {
-        return tester;
-    }
 
-    public Date getCreatedDate() {
-        return createdDate;
-    }
-
-    public Date getEndDate() {
-        return endDate;
     }
     
     public void saveInFile (BufferedWriter buffer)   throws IOException {
