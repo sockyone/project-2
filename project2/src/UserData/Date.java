@@ -23,6 +23,7 @@ public class Date {
     public String hour;
 
     public Date() {
+
     }
 
     

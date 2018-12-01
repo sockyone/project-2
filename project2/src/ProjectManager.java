@@ -24,7 +24,8 @@ public class ProjectManager {
         this.userList = new ArrayList<>();
     }
 
-    public void loadProject() throws IOException {
+
+    private void loadProject() throws IOException {
         FileInputStream fis = new FileInputStream(this.projectFile);
         InputStreamReader isr = new InputStreamReader(fis);
         BufferedReader bfr = new BufferedReader(isr);
@@ -120,7 +121,7 @@ public class ProjectManager {
 
 
 
-    public void loadTask() throws IOException{
+    private void loadTask() throws IOException{
         FileInputStream fis = new FileInputStream(this.taskFile);
         InputStreamReader isr = new InputStreamReader(fis);
         BufferedReader bfr = new BufferedReader(isr);
@@ -187,7 +188,7 @@ public class ProjectManager {
 
 
 
-    public void saveUser() throws IOException {
+    private void saveUser() throws IOException {
         FileWriter writer = new FileWriter(this.userFile);
         BufferedWriter buffer = new BufferedWriter(writer);
         for(int i= 0;i<this.userList.size();i++)
@@ -199,7 +200,7 @@ public class ProjectManager {
 
     
 
-    public void loadUser () throws IOException {
+    private void loadUser () throws IOException {
         FileInputStream fis = new FileInputStream(this.userFile);
         InputStreamReader isr = new InputStreamReader(fis);
         BufferedReader bfr = new BufferedReader(isr);
