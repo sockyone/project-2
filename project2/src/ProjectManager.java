@@ -45,7 +45,7 @@ public class ProjectManager {
                 while(line != null && line != "Employees ")
                 {
                     String []array = line.split("/");
-                    DATE start = new DATE();
+                    Date start = new Date();
                     if (array.length == 3 )
                     {
                         start.day = array[0];
@@ -55,7 +55,7 @@ public class ProjectManager {
                     }
                     line = bfr.readLine();
                     String []arr = line.split("/");
-                    DATE end = new DATE();
+                    Date end = new Date();
                     if (array.length == 3 )
                     {
                         end.day = array[0];
@@ -132,7 +132,7 @@ public class ProjectManager {
             String prjID = line;
             line = bfr.readLine();
             String []array = line.split(" ");
-            DATE start = null;
+            Date start = new Date();
             if (array.length == 3 )
             {
                 start.hour = array[0];
@@ -143,7 +143,7 @@ public class ProjectManager {
             }
             line = bfr.readLine();
             String []arr = line.split(" ");
-            DATE end = null;
+            Date end = new Date();
             if (array.length == 4 )
             {
                 end.hour = array[0];

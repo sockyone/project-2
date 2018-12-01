@@ -9,25 +9,25 @@
 
 package UserData;
 
-import java.util.Date;
+
 import java.util.Objects;
 
 /**
  *
  * @author nghun
  */
-public class DATE {
+public class Date {
     public String day;
     public String month;
     public String year;
     public String hour;
 
-    public DATE() {
+    public Date() {
     }
 
     
     
-    public DATE(String day, String month, String year, String hour) {
+    public Date(String day, String month, String year, String hour) {
         this.day = day;
         this.month = month;
         this.year = year;
@@ -68,10 +68,10 @@ public class DATE {
     
     
     
-    public DATE getCurrentTime()
+    public Date getCurrentTime()
     {
-        DATE temp = new DATE();
-        Date current = new Date();
+        Date temp = new Date();
+        java.util.Date current = new java.util.Date();
         String arr = current.toString();
         String []array = arr.split(" ");
         temp.hour = array[3];
@@ -99,7 +99,7 @@ public class DATE {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final DATE other = (DATE) obj;
+        final Date other = (Date) obj;
         if (!Objects.equals(this.day, other.day)) {
             return false;
         }
