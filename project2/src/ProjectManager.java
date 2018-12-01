@@ -1,4 +1,5 @@
 import UserData.*;
+import UserData.Task.STATUS;
 
 import java.sql.SQLOutput;
 import java.util.ArrayList;
@@ -118,12 +119,82 @@ public class ProjectManager {
     }
 
     private void showAllProjectAndTaskCount() {
+        System.out.println("Project: ");
+        for (int i = 0;i< this.listProject.size();i++)
+        {
+            this.listProject.get(i).toString();
+            System.out.println();
+        }
+        int avl =0;
+        System.out.println("Task available: ");
+        for (int i = 0;i< this.listTask.size();i++)
+        {
+            if(this.listTask.get(i).status != STATUS.CLOSED ) 
+            {
+                avl++;
+            }
+        }
+        int jn = 0;
+        System.out.println("Task closed: ");
+        for (int i = 0;i< this.listTask.size();i++)
+        {
+            if(this.listTask.get(i).status == STATUS.CLOSED ) 
+            {
+                jn++;
+            }
+        }
 
     }
 
     private void showProjectAndTaskCountFromId() {
+        System.out.println("Project joined: ");
+        for (int i = 0;i< this.listProject.size();i++)
+        {
+            if(this.user.getId() == this.listProject.get(i).mnID ) 
+            {
+                System.out.print(this.listProject.get(i).name + " " + this.listProject.get(i).prjID);
+                System.out.println();
+            }
+            else 
+            {
+                for(int j = 0;j<this.listProject.get(i).user.size();j++)
+                {
+                    if (this.user.getId() == this.listProject.get(i).user.get(j).getId() )
+                    {
+                        System.out.print(this.listProject.get(i).name + " " + this.listProject.get(i).prjID);
+                        System.out.println();
+                    }
+                }
+            }
+                
+        }
+        System.out.println("Task joined: ");
+        int count = 0;
+        for (int i = 0;i< this.listTask.size();i++)
+        {
+            for(int j = 0;j<this.listTask.get(i).developer.size();j++)
+                {
+                    if (this.user.getId() == this.listTask.get(i).developer.get(j).getId() )
+                    {
+                        count ++;
+                    }
+                }
+            }
+        for (int i = 0;i< this.listTask.size();i++)
+        {
+            for(int j = 0;j<this.listTask.get(i).tester.size();j++)
+                {
+                    if (this.user.getId() == this.listTask.get(i).tester.get(j).getId() )
+                    {
+                        count ++;
+                    }
+                }
+            }
+        System.out.print(count);
+                
+        }
+    
 
-    }
 
     private void createNewProject() {
 
@@ -132,6 +203,7 @@ public class ProjectManager {
 
 
     private void showTaskInProject() {
+        
 
     }
 

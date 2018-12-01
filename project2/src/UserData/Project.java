@@ -30,6 +30,7 @@ public class Project {
         this.user = user;
     }
 
+    
     public void saveinFile(BufferedWriter buffer)   throws IOException {
         buffer.write(this.prjID);
         buffer.newLine();
@@ -53,5 +54,12 @@ public class Project {
         }
         buffer.newLine();
     }
+
+    @Override
+    public String toString() {
+        return "Project{" + "name=" + name + ", prjID=" + prjID + ", mnID=" + mnID + '}';
+    }
+    
     
 }
+

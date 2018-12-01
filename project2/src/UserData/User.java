@@ -121,4 +121,12 @@ public class User {
         buffer.close();
     }
 
+    @Override
+    public String toString() {
+        return "User{" + "userName=" + userName + ", fullName=" + fullName + ", id=" + id + '}';
+    }
+
+   
+
+    
 }
