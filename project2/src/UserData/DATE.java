@@ -22,6 +22,10 @@ public class DATE {
     public String year;
     public String hour;
 
+    public DATE() {
+    }
+
+    
     
     public DATE(String day, String month, String year, String hour) {
         this.day = day;
@@ -66,7 +70,7 @@ public class DATE {
     
     public DATE getCurrentTime()
     {
-        DATE temp = null;
+        DATE temp = new DATE();
         Date current = new Date();
         String arr = current.toString();
         String []array = arr.split(" ");
