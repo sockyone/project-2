@@ -161,8 +161,7 @@ public class ProjectManager {
                 {
                     if (this.user.getId() == this.listProject.get(i).user.get(j).getId() )
                     {
-                        System.out.print(this.listProject.get(i).name + " " + this.listProject.get(i).prjID);
-                        System.out.println();
+                        System.out.println(this.listProject.get(i).name + " " + this.listProject.get(i).prjID);
                     }
                 }
             }
@@ -191,13 +190,15 @@ public class ProjectManager {
                 }
             }
         System.out.print(count);
-                
-        }
+    }
     
 
 
     private void createNewProject() {
-
+        if (this.user.getType() != User.TYPE.CEO) {
+            System.out.println("You have to be CEO to create new project.");
+            return;
+        }
     }
 
 
@@ -216,6 +217,7 @@ public class ProjectManager {
             System.out.println("You have no permision.");
             return;
         }
+        
 
 
 
@@ -226,6 +228,11 @@ public class ProjectManager {
             System.out.println("Only CEO have permission for this option.");
             return;
         }
+         else for(int i = 0; i< this.userList.size();i++)
+            {
+                this.userList.get(i).toString();
+                System.out.println();
+            }
 
 
 
@@ -238,6 +245,11 @@ public class ProjectManager {
             System.out.println("Only Manager & CEO");
             return;
         }
+        else for(int i = 0; i< this.userList.size();i++)
+            {
+                this.userList.get(i).toString();
+                System.out.println();
+            }
 
 
 
