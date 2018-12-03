@@ -15,8 +15,9 @@ import java.util.UUID;
  */
 public class Main {
 
-    public static void main(String[] args) {
-        System.out.println("Still work");
+    public static void main(String[] args) throws Exception {
+        ProjectManager projectManager = new ProjectManager();
+        projectManager.run();
     }
 }
 

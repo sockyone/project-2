@@ -255,7 +255,6 @@ public class ProjectManager {
         {
             this.listProject.get(i).CSV(buffer);
         }
-
     }
 
     private void taskJoinedDisplay() {
@@ -263,8 +262,6 @@ public class ProjectManager {
             System.out.println("You have no permision.");
             return;
         }
-        
-
 
 
     }
@@ -279,7 +276,6 @@ public class ProjectManager {
                 this.userList.get(i).toString();
                 System.out.println();
             }
-
 
 
 
