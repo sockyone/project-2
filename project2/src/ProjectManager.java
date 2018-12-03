@@ -66,6 +66,7 @@ public class ProjectManager {
                 System.out.println("Invalid.");
                 continue;
             }
+            
 
             switch (choose) {
                 case 1: projectListDisplay(); break;
@@ -244,6 +245,18 @@ public class ProjectManager {
 
 
     private void showTaskInProject() {
+        System.out.println("Choose Project");
+        for (int i = 1;i<= this.listProject.size();i++)
+        {
+            System.out.print(i + ".");
+            System.out.println(this.listProject.get(i).name);
+        }
+        int choice = scn.nextInt();
+        for(int i = 0; i< this.listProject.get(choice).task.size();i++)
+        {
+            this.listProject.get(choice).task.get(i).toString();
+            System.out.println();
+        }
         
 
     }
@@ -255,6 +268,7 @@ public class ProjectManager {
         {
             this.listProject.get(i).CSV(buffer);
         }
+
     }
 
     private void taskJoinedDisplay() {
@@ -262,6 +276,19 @@ public class ProjectManager {
             System.out.println("You have no permision.");
             return;
         }
+        for(int i = 0;i < this.listTask.size();i++)
+        {
+            for(int j = 0; j< this.listTask.get(i).developer.size();j++)
+            {
+                if(this.user.getId() == this.listTask.get(i).developer.get(j).getId()) System.out.println(this.listTask.get(j).toString());
+            }
+            for(int j = 0; j< this.listTask.get(i).tester.size();j++)
+            {
+                if(this.user.getId() == this.listTask.get(i).tester.get(j).getId()) System.out.println(this.listTask.get(j).toString());
+            }
+        }
+        
+
 
 
     }
@@ -276,6 +303,7 @@ public class ProjectManager {
                 this.userList.get(i).toString();
                 System.out.println();
             }
+
 
 
 

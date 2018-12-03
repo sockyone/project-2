@@ -73,5 +73,11 @@ public class Task {
         buffer.close();
         
     }
+
+    @Override
+    public String toString() {
+        return "Task{" + "prjID=" + prjID + ", createdDate=" + createdDate + ", endDate=" + endDate + ", status=" + status + '}';
+    }
+    
     
 }
