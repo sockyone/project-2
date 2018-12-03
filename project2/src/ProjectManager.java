@@ -23,6 +23,7 @@ public class ProjectManager {
     private ArrayList<Task> listTask;
     private User user;
     private Scanner scn;
+    private final String projectCSV = "projectCSV.txt"; 
 
 
     public ProjectManager() {
@@ -32,7 +33,7 @@ public class ProjectManager {
         scn = new Scanner(System.in);
     }
 
-    public void run() {
+    public void run() throws IOException {
         System.out.println("Loading...");
         try {
             loadUser();
@@ -86,7 +87,7 @@ public class ProjectManager {
         return true;
     }
 
-    private void projectListDisplay() {
+    private void projectListDisplay() throws IOException {
         if (this.user.getType() == User.TYPE.CEO) showAllProjectAndTaskCount();
         else showProjectAndTaskCountFromId();
 
@@ -194,10 +195,25 @@ public class ProjectManager {
     
 
 
-    private void createNewProject() {
+    private void createNewProject()
+    {
         if (this.user.getType() != User.TYPE.CEO) {
             System.out.println("You have to be CEO to create new project.");
             return;
+        }
+        else 
+        {
+            System.out.println("Name of new Project");
+            String prjName = scn.nextLine();
+            System.out.println("ID of new Project");
+            String prjID = scn.nextLine();
+            System.out.println("ManagerId of new Project");
+            String mnID = scn.nextLine();
+            Project newProject = new Project(prjName,prjID,mnID);
+            this.listProject.add(newProject);
+            
+                       
+            
         }
     }
 
@@ -208,7 +224,13 @@ public class ProjectManager {
 
     }
 
-    private void printProjectToCSV() {
+    private void printProjectToCSV() throws IOException {
+        FileWriter writer = new FileWriter(this.projectCSV);
+        BufferedWriter buffer = new BufferedWriter(writer);
+        for (int i =0;i<this.listProject.size();i++)
+        {
+            this.listProject.get(i).CSV(buffer);
+        }
 
     }
 

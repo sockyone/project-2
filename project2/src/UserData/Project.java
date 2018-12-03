@@ -30,6 +30,13 @@ public class Project {
         this.user = user;
     }
 
+    public Project(String name, String prjID, String mnID) {
+        this.name = name;
+        this.prjID = prjID;
+        this.mnID = mnID;
+    }
+
+    
     
     public void saveinFile(BufferedWriter buffer)   throws IOException {
         buffer.write(this.prjID);
@@ -55,6 +62,10 @@ public class Project {
         buffer.newLine();
     }
 
+    public void CSV(BufferedWriter buffer)   throws IOException {
+        buffer.write(this.name + "," +this.prjID + "," + this.mnID);
+        buffer.newLine();
+    }
     @Override
     public String toString() {
         return "Project{" + "name=" + name + ", prjID=" + prjID + ", mnID=" + mnID + '}';
