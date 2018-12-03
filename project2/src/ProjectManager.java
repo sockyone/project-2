@@ -82,8 +82,41 @@ public class ProjectManager {
 
     }
     private boolean login() {
+        System.out.println("Enter Username :");
+        String UserName = scn.nextLine();
+        int cnt = 1;
+        for(int i = 0;i<this.userList.size();i++)
+        {
+            if(this.userList.get(i).getUserName().equals(UserName))
+            {
+                System.out.println("Enter Password :");
+                String Password = scn.nextLine();
+                int count = 1;
+                while(this.userList.get(i).checkPassword(Password) != true && count <= 3)
+                {
+                    System.out.println("Wrong Password, Enter Password again :");
+                    Password = scn.nextLine();
+                    count++;
+                }
+                if(this.userList.get(i).checkPassword(Password) == true ) return true;
+                else return false;
+                
+            }
+            else 
+            {
+                while(this.userList.get(i).getUserName() != UserName && cnt <=3)
+                {
+                    System.out.println("Enter Username again :");
+                    UserName = scn.nextLine();
+                    cnt++;
+                }
+                if (this.userList.get(i).getUserName() == UserName ) return true;
+                else return false;
+            }
+                        
+        }
 
-
+        
         return true;
     }
 
@@ -156,16 +189,7 @@ public class ProjectManager {
                 System.out.print(this.listProject.get(i).name + " " + this.listProject.get(i).prjID);
                 System.out.println();
             }
-            else 
-            {
-                for(int j = 0;j<this.listProject.get(i).user.size();j++)
-                {
-                    if (this.user.getId() == this.listProject.get(i).user.get(j).getId() )
-                    {
-                        System.out.println(this.listProject.get(i).name + " " + this.listProject.get(i).prjID);
-                    }
-                }
-            }
+           
                 
         }
         System.out.println("Task joined: ");
@@ -250,7 +274,7 @@ public class ProjectManager {
             System.out.println("Only CEO have permission for this option.");
             return;
         }
-         else for(int i = 0; i< this.userList.size();i++)
+        for(int i = 0; i< this.userList.size();i++)
             {
                 this.userList.get(i).toString();
                 System.out.println();
@@ -267,7 +291,7 @@ public class ProjectManager {
             System.out.println("Only Manager & CEO");
             return;
         }
-        else for(int i = 0; i< this.userList.size();i++)
+        for(int i = 0; i< this.userList.size();i++)
             {
                 this.userList.get(i).toString();
                 System.out.println();
@@ -296,7 +320,7 @@ public class ProjectManager {
             if(tsk.equals("Task: "))
             {
                 int i = 0;
-                while(line != null && line != "Employees ")
+                while(line != null)
                 {
                     String []array = line.split("/");
                     Date start = new Date();
@@ -347,29 +371,9 @@ public class ProjectManager {
                     line = bfr.readLine();
 
                 }
-                if (line.equals("Employees "))
-                {
-                    String []us = line.split(",");
-                    if (us.length == 5)
-                    {
-                        User.TYPE tmp = null;
-                        if(us[0].equals("Tester"))
-                        {
-                            tmp = User.TYPE.TESTER;
-                            Tester t = new Tester(us[5],us[1],us[2],us[3]);
-                            emp.add(t);
-                        }
-                        if (us[0].equals("Developer"))
-                        {
-                            tmp = User.TYPE.DEVELOPER;
-                            Developer d = new Developer(us[5],us[1],us[2],us[3]);
-                            emp.add(d);
-                        }
-
-                    }
-                }
+                
             }
-            Project ttp = new Project(pjName,prjID,mnID,task,emp);
+            Project ttp = new Project(pjName,prjID,mnID,task);
             this.listProject.add(ttp);
             line = bfr.readLine();
         }

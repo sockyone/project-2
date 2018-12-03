@@ -20,14 +20,13 @@ public class Project {
     public String prjID;
     public String mnID;
     public ArrayList<Task> task;
-    public ArrayList<User> user;
-
-    public Project(String name, String prjID, String mnID, ArrayList<Task> task, ArrayList<User> user) {
+    
+    public Project(String name, String prjID, String mnID, ArrayList<Task> task) {
         this.name = name;
         this.prjID = prjID;
         this.mnID = mnID;
         this.task = task;
-        this.user = user;
+        
     }
 
     public Project(String name, String prjID, String mnID) {
@@ -53,13 +52,7 @@ public class Project {
             buffer.newLine();
         }
         buffer.newLine();
-        buffer.write("Employees ");
-        buffer.newLine();
-        for(int i = 0 ; i< this.user.size();i++)
-        {
-            this.user.get(i).saveInFile(buffer);
-        }
-        buffer.newLine();
+        
     }
 
     public void CSV(BufferedWriter buffer)   throws IOException {
